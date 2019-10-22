@@ -1,0 +1,22 @@
+li {
+    list-style-type: none;
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+li span {
+    color: #ffff;
+    background: red;
+    font-family: monospace;
+    font-size: 12px;
+    padding: 4px 8px;
+    letter-spacing: 2px;
+}
+
+li.par {
+    background-color: lightblue;
+}
+
+li.impar {
+    background-color: steelblue;
+}
