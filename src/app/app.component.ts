@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ejemplo1';
+  title:string = 'ejemplo1';
+  color:string = "red";
+
+  generateRandom():string {
+    return Math.floor(Math.random()*256).toString(16);
+  }
+
+  colorHex():string {
+    return "#"+this.generateRandom()+this.generateRandom()+this.generateRandom();
+  }
 }

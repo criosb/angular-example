@@ -1,0 +1,13 @@
+<h1>Organizador de tareas</h1>
+<div [ngSwitch]="diasSemana">
+    <p *ngSwitchCase="'lunes'">Tomar café y trabajar</p>
+    <p *ngSwitchCase="'martes'">No casarme y evitar barcos</p>
+    <p *ngSwitchCase="'miercoles'">Sobrevivir al día mas largo de la semana</p>
+    <p *ngSwitchCase="'jueves'">Hacer simulacro de viernes</p>
+    <p *ngSwitchCase="'viernes'">Actualizar redes sociales</p>
+    <p *ngSwitchCase="'sabado'">.............</p>
+    <p *ngSwitchCase="'domingo'">Dormir todo el día</p>
+    <p *ngSwitchCase="13">---------- 13 ----------</p>
+    <p *ngSwitchDefault>Elije un día de la semana para conocer tu destino</p>
+</div>
+<input type="text" [(ngModel)]="diasSemana" />

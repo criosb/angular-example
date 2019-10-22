@@ -1,0 +1,24 @@
+<button (click)="valor1 = true">Texto 1</button>
+<button (click)="valor2 = !valor2">Texto 2</button>
+<hr>
+<div class="contenedor">
+  <div *ngIf="valor1">
+    <h1>
+      Texto 1
+    </h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+</div>
+<div class="contenedor">
+  <div *ngIf="valor2; else otroTexto">
+    <h1>
+      Texto 2
+    </h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+  <ng-template #otroTexto>
+      <h1>OTRO TEXTO</h1>
+  </ng-template>
+</div>  
+<p>Valor1: {{valor1}}</p>
+<p>Valor2: {{valor2}}</p>

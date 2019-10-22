@@ -1,0 +1,6 @@
+<h1>Estilos</h1>
+<div class="square" [ngStyle]="{'background':color ? color:'peru'}">
+
+</div>
+<button (click)="color = 'red'" [ngClass]="{'redondo' : color == 'red'}">Rojo</button>
+<button (click)="color = 'green'" [ngClass]="color">Verde</button>

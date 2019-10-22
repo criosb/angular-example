@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-test1',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Test1Component implements OnInit {
 
+  @Input() colorNombre:String;
+  
   constructor() { }
 
   ngOnInit() {
