@@ -1,6 +1,6 @@
 <ul>
     <li *ngFor="let libro of libros ; index as indice; first as esPrimero; last as esUltimo; odd as esPar; even as esImpar" [ngClass]="{'par' : esPar, 'impar' : esImpar}">
-        <a (click)="mostrarAutor(libro)">{{libro.titulo}} - {{libro.autor}}</a>
+        <a [routerLink]="['/detalle', libro.id]">{{libro.titulo}} - {{libro.autor}}</a>
         <span *ngIf="indice == 5">destacado</span>
         <span *ngIf="esPrimero">primero</span>
         <span *ngIf="esUltimo">ultimo</span>

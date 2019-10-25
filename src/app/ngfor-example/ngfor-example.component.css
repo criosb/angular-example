@@ -20,3 +20,7 @@ li.par {
 li.impar {
     background-color: steelblue;
 }
+
+li a {
+    color: white;
+}
