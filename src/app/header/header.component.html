@@ -11,6 +11,13 @@
         </nav>
       
         <div class="jumbotron">
+          <button class="glyphicon glyphicon-book mostrar-libros" (click)="mostrarLista = !mostrarLista"> </button>
+          <div class="misLibros" *ngIf="mostrarLista">
+            <h2>Mis Libros</h2>
+            <ul *ngIf="librosSeleccionados.mostrarlibros()">
+              <li *ngFor="let libro of librosSeleccionados.mostrarlibros()">{{libro.titulo}}</li>
+            </ul>
+          </div>
           <h1> Club de libros</h1>
         </div>
       

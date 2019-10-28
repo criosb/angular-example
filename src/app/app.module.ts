@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,10 +20,13 @@ import { Error404Component } from './error404/error404.component';
 import { ListaLibrosComponent } from './lista-libros/lista-libros.component';
 import { DetalleComponent } from './detalle/detalle.component';
 
+import { LibrosSeleccionadosService } from './libros-seleccionados.service';
+import { LibrosCargajsonService } from './libros-cargajson.service';
+
 const rutasApp: Routes = [
   { path:'', component: HomeComponent, pathMatch:'full' },
-  { path:'lista-libros', component: NgforExampleComponent },
-  { path:'lista-libros-2', component: ListaLibrosComponent },
+  { path:'lista-libros-2', component: NgforExampleComponent },
+  { path:'lista-libros', component: ListaLibrosComponent },
   { path:'detalle', redirectTo:'lista-libros' },
   { path:'detalle/:libroId', component: DetalleComponent },
   { path:'colores', component: ColoresComponent},
@@ -55,9 +59,10 @@ const rutasApp: Routes = [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(rutasApp)
+    RouterModule.forRoot(rutasApp),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [LibrosSeleccionadosService, LibrosCargajsonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

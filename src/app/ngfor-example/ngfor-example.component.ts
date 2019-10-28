@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LibrosSeleccionadosService } from '../libros-seleccionados.service';
 
 @Component({
   selector: 'app-ngfor-example',
@@ -9,7 +10,7 @@ export class NgforExampleComponent implements OnInit {
 
   libros:Array<Object>;
 
-  constructor() { 
+  constructor(public librosSeleccionados: LibrosSeleccionadosService) { 
     this.libros = [
       { id: 1, titulo: 'El retrato de Dorian Gray', autor: 'Oscar Wilde', descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam." },
       { id: 2, titulo: 'Frankenstein', autor: 'Mary Shelley', descripcion: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam." },
@@ -29,6 +30,10 @@ export class NgforExampleComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  agregarLibro(_libro) {
+    this.librosSeleccionados.agregarLibros(_libro);
   }
 
 }
