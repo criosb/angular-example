@@ -3,7 +3,7 @@
         <div class="glyphicon glyphicon-hourglass"></div> CARGANDO.....
     </div>
     <ul>
-        <li *ngFor="let libro of libros">
+        <li #myItem *ngFor="let libro of libros" (mouseover)="makeActive(myItem)" (mouseleave)="makeInactive(myItem)">
             <a (click)="agregarLibro(libro)" [routerLink]="['/detalle' , libro.id ]"> {{libro.titulo}} </a>
         </li>
     </ul>

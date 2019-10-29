@@ -1,5 +1,5 @@
   
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { LibrosCargajsonService } from '../libros-cargajson.service';
 import { LibrosSeleccionadosService } from '../libros-seleccionados.service';
 
@@ -14,7 +14,7 @@ export class ListaLibrosComponent implements OnInit {
   errorHttp: boolean;
   loading: boolean;
 
-  constructor( public librosCargaJson: LibrosCargajsonService, public librosSeleccionados: LibrosSeleccionadosService ) { }
+  constructor( private renderer:Renderer2, public librosCargaJson: LibrosCargajsonService, public librosSeleccionados: LibrosSeleccionadosService ) { }
 
   ngOnInit() {
     this.loading = true;
@@ -40,6 +40,14 @@ export class ListaLibrosComponent implements OnInit {
 
   mostrarAutor(_libro) {
     alert(` ${_libro.titulo} fue escrito por ${_libro.autor} `);
+  }
+
+  makeActive(_htmlElement: HTMLElement) {
+    this.renderer.addClass(_htmlElement,'activo');
+  }
+
+  makeInactive(_htmlElement: HTMLElement) {
+    this.renderer.removeClass(_htmlElement,'activo');
   }
 
 }
